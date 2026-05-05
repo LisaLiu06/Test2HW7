@@ -18,11 +18,11 @@ all: $(SERVER) $(CLIENT)
 
 # Build server
 $(SERVER): $(SERVER_OBJ)
-	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+	$(CC) $(LDFLAGS) $< -o $@ $(LDLIBS)
 
 # Build client (needs ncurses)
 $(CLIENT): $(CLIENT_OBJ)
-	$(CC) $(LDFLAGS) $^ -o $@ -lncurses
+	$(CC) $(LDFLAGS) $< -o $@ -lncurses
 
 # Compile object files (include util.h dependency)
 %.o: %.c util.h
